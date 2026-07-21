@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sponsorship prospectus - Layout Sketch 1</title>
+<meta name="description" content="Sponsorship tiers and benefits for Layout Sketch 1, a 96 hour event: 72 hour build + 24 hour FRC competition.">
+<!-- Reachable by direct link only: not in data/site.json's nav, and kept out
+     of search indexes since it's meant for prospective sponsors, not the
+     general public. -->
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/img/logo.png">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/sketch.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+<div class="sk-frame"></div>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="wrap">
+  <header class="site-nav">
+    <a class="site-nav__brand" href="index.html" data-site-name>Layout Sketch 1</a>
+    <nav class="site-nav__links" data-nav aria-label="Primary"></nav>
+  </header>
+</div>
+
+<main id="main">
+  <section class="page-head wrap">
+    <p class="t-mono-caps hero__eyebrow">Sponsorship prospectus</p>
+    <h1 class="t-xl">Sponsor Layout&nbsp;Sketch&nbsp;One</h1>
+    <p id="prospectus-intro"></p>
+  </section>
+
+  <section class="section wrap" id="why">
+    <div class="section__head">
+      <h2>Why sponsor</h2>
+    </div>
+    <ul class="why-list" id="why-list"></ul>
+  </section>
+
+  <section class="section wrap" id="snapshot">
+    <div class="section__head">
+      <h2>Event snapshot</h2>
+    </div>
+    <dl class="hero__meta hero__meta--flush" id="stats-list"></dl>
+  </section>
+
+  <section class="section wrap" id="tiers">
+    <div class="section__head">
+      <h2>Sponsorship tiers</h2>
+      <p>Every tier includes everything the tiers below it include — a Diamond sponsor gets every benefit on this page.</p>
+    </div>
+    <div class="benefit-table-wrap">
+      <table class="benefit-table" id="benefit-table"></table>
+    </div>
+  </section>
+
+  <section class="section wrap" id="team">
+    <div class="section__head">
+      <h2>Who you'll be working with</h2>
+      <p>The organizers running the build, the workshops, and the competition.</p>
+    </div>
+    <ul class="team-grid" id="sponsor-team-grid" data-dim-repeat="first"
+        data-dim data-dim-mode="fluid" data-dim-size="w"
+        data-dim-radius="none" data-dim-dots="none" data-dim-priority="4"
+        data-dim-vw="1024+"></ul>
+  </section>
+
+  <section class="wrap" id="track-record">
+    <div class="section__head">
+      <h2>Proven track record</h2>
+      <p>What we've already run, before asking anyone to fund something new.</p>
+    </div>
+    <div id="sponsor-featured"></div>
+  </section>
+
+  <section class="section wrap" id="organized">
+    <div class="section__head">
+      <h2>Also organized by the team</h2>
+      <p>Other events members of the organizing team have run.</p>
+    </div>
+    <div class="event-list" id="sponsor-organized" data-dim-repeat="first"></div>
+  </section>
+
+  <section class="section wrap" id="contact">
+    <div class="section__head">
+      <h2>Next steps</h2>
+    </div>
+    <div class="sponsor-contact" id="sponsor-contact"></div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <div>
+      <p class="t-lg" data-site-name>Layout Sketch 1</p>
+      <p class="t-sm t-dim">&copy; <span data-year></span> &middot; A 96 hour event: 72 hour build + 24 hour FRC competition</p>
+    </div>
+    <ul class="site-footer__links" data-socials></ul>
+  </div>
+</footer>
+
+<template id="tpl-team-card">
+  <li class="team-card" data-dim-child
+      data-dim-mode="fluid" data-dim-size="w,h" data-dim-priority="4"
+      data-dim-side="w:top h:left">
+    <p class="team-card__name" data-slot="name"></p>
+    <p class="team-card__role" data-slot="role"></p>
+    <p class="team-card__program"><span class="sk-tag sk-tag--fluid" data-slot="program"></span></p>
+    <p class="team-card__links">
+      <a data-slot="linkedin"></a>
+      <a data-slot="github"></a>
+    </p>
+  </li>
+</template>
+
+<script type="module">
+  import { render } from './assets/js/pages/sponsors.js';
+  import Sketch from './assets/js/sketch/index.js';
+  await render();
+  Sketch.init();
+</script>
+</body>
+</html>

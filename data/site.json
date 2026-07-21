@@ -1,9 +1,9 @@
 {
   "site": {
     "name": "Layout Sketch 1",
-    "tagline": "A 96-hour Ri3D + FRC competition hackathon",
+    "tagline": "A 96 hour event: 72 hour build + 24 hour FRC competition",
     "registerUrl": "https://magmalabs.fillout.com/t/7gQYUiwJQfus",
-    "sponsorUrl": "#sponsor"
+    "sponsorUrl": "sponsors.html"
   },
   "nav": [
     { "label": "Home", "href": "index.html" },

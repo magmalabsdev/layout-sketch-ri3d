@@ -1,17 +1,17 @@
 {
   "event": {
-    "start": "2027-01-09T09:00:00",
+    "start": "2026-12-23T12:00:00",
     "durationHours": 96,
     "tickEvery": 3
   },
   "phases": [
     { "id": "design", "label": "Arrive", "startHour": 0, "endHour": 1 },
     { "id": "build", "label": "Kickoff", "startHour": 1, "endHour": 2 },
-    { "id": "iterate", "label": "Learn", "startHour": 2, "endHour": 4 },
-    { "id": "compete", "label": "Build", "startHour": 4, "endHour": 73 },
-    { "id": "compete", "label": "Practice", "startHour": 73, "endHour": 83 },
-    { "id": "compete", "label": "Competition", "startHour": 83, "endHour": 95 },
-    { "id": "compete", "label": "Awards", "startHour": 95, "endHour": 96 }
+    { "id": "learn", "label": "Learn", "startHour": 2, "endHour": 4 },
+    { "id": "build", "label": "Build", "startHour": 4, "endHour": 73 },
+    { "id": "practice", "label": "Practice", "startHour": 73, "endHour": 90 },
+    { "id": "compete", "label": "Competition", "startHour": 90, "endHour": 95 },
+    { "id": "awards", "label": "Awards", "startHour": 95, "endHour": 96 }
   ],
   "lanes": [
     { "id": "build", "label": "Main Event" },
@@ -19,15 +19,26 @@
     { "id": "social", "label": "Social" }
   ],
   "blocks": [
-    { "id": "kickoff", "lane": "build", "title": "Kickoff & strategy", "startHour": 0, "endHour": 6 },
-    { "id": "cad-sprint", "lane": "build", "title": "CAD sprint", "startHour": 6, "endHour": 24 },
-    { "id": "fabrication", "lane": "build", "title": "Fabrication", "startHour": 24, "endHour": 84 },
+    { "id": "kickoff", "lane": "build", "title": "Kickoff and game reveal", "startHour": 1, "endHour": 2 },
+    { "id": "overnight-1", "lane": "build", "title": "Overnight - power tool use prohibited", "startHour": 12, "endHour": 18 },
+    
+    { "id": "overnight-2", "lane": "build", "title": "Overnight - power tool use prohibited", "startHour": 36, "endHour": 42 },
+    { "id": "overnight-3", "lane": "build", "title": "Overnight - power tool use prohibited", "startHour": 60, "endHour": 66 },
+    { "id": "practice", "lane": "build", "title": "Practice fields open", "startHour": 72, "endHour": 80 },
+    { "id": "practice-matches", "lane": "build", "title": "Practice Matches", "startHour": 80, "endHour": 84 },
+    { "id": "overnight-4", "lane": "build", "title": "Overnight - power tool use prohibited", "startHour": 84, "endHour": 90 },
+    { "id": "qual-matches", "lane": "build", "title": "Qualification Matches", "startHour": 90, "endHour": 93 },
+    { "id": "elim-matches", "lane": "build", "title": "Elimination Matches", "startHour": 93, "endHour": 95 },
 
 
-    { "id": "ws-cad", "lane": "workshops", "title": "CAD for competition", "startHour": 4, "endHour": 8, "workshopId": "cad-for-competition" },
-    { "id": "ws-wiring", "lane": "workshops", "title": "Control system wiring", "startHour": 30, "endHour": 33, "workshopId": "control-system-wiring" },
+    { "id": "ws-cad", "lane": "workshops", "title": "Intro to Onshape", "startHour": 2, "endHour": 3, "workshopId": "onshape" },
+    { "id": "ws-dfm", "lane": "workshops", "title": "Design for Manufacturing", "startHour": 3, "endHour": 4, "workshopId": "dfm" },
+    { "id": "ws-echo", "lane": "workshops", "title": "Controlling your Echo", "startHour": 5, "endHour": 6, "workshopId": "echo" },
+    { "id": "ws-auto", "lane": "workshops", "title": "Autonomous Strategy", "startHour": 21, "endHour": 22, "workshopId": "auto" },
+    { "id": "ws-media", "lane": "workshops", "title": "Documenting your journey", "startHour": 69, "endHour": 70, "workshopId": "media" },
 
-    { "id": "opening", "lane": "social", "title": "Opening dinner", "startHour": 9, "endHour": 12 }
+    { "id": "opening", "lane": "social", "title": "Opening dinner", "startHour": 9, "endHour": 12 },
+    { "id": "lightning-talks", "lane": "social", "title": "Lightning Talks", "startHour": 33, "endHour": 35 }
 
   ]
 }

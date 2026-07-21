@@ -17,6 +17,76 @@ const PHASE_TIGHT_PX = 150;
 
 const hourLabel = (h) => `${h}h`;
 
+const formatDateTick = (date) => {
+  const weekday = date.toLocaleDateString(undefined, { weekday: 'short' });
+  const time = date.toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit' });
+  return `${weekday} ${time}`;
+};
+
+/**
+ * Every 12am–6am window the event spans, as hour offsets from event.start.
+ * Walked in local calendar days (not fixed 24h chunks) so it stays correct
+ * across a DST transition, and clipped to the event's actual start/end so a
+ * start or end time that itself falls inside a night window doesn't produce
+ * a window sticking out past the schedule.
+ */
+function nightWindows(event) {
+  const start = new Date(event.start);
+  const end = new Date(start.getTime() + event.durationHours * 3600000);
+
+  const day = new Date(start);
+  day.setHours(0, 0, 0, 0);
+
+  const windows = [];
+  while (day.getTime() < end.getTime()) {
+    const nightEnd = new Date(day);
+    nightEnd.setHours(6, 0, 0, 0);
+    const from = Math.max(day.getTime(), start.getTime());
+    const to = Math.min(nightEnd.getTime(), end.getTime());
+    if (to > from) {
+      windows.push({
+        startHour: (from - start.getTime()) / 3600000,
+        endHour: (to - start.getTime()) / 3600000,
+      });
+    }
+    day.setDate(day.getDate() + 1);
+  }
+  return windows;
+}
+
+/**
+ * The left axis reads in elapsed hours; this one reads in wall-clock date
+ * and time, computed from event.start rather than the relative offsets the
+ * rest of the chart uses. Late-night hours (12am–6am) are banded in the
+ * warning colour used everywhere else on the site for a safety/logistics
+ * flag, not just an arithmetic curiosity.
+ */
+function renderDateAxis(schedule) {
+  const { event } = schedule;
+  const axis = el('div', 'gantt__axis gantt__axis--dates');
+  axis.style.height = `${event.durationHours * HOUR_PX}px`;
+
+  const start = new Date(event.start);
+
+  for (const w of nightWindows(event)) {
+    const band = el('div', 'gantt__night', null, {
+      title: 'Late night (12am – 6am)',
+    });
+    band.style.top = `${w.startHour * HOUR_PX}px`;
+    band.style.height = `${(w.endHour - w.startHour) * HOUR_PX}px`;
+    axis.appendChild(band);
+  }
+
+  const every = event.tickEvery ?? 12;
+  for (let h = 0; h <= event.durationHours; h += every) {
+    const at = new Date(start.getTime() + h * 3600000);
+    const tick = el('div', 'gantt__tick gantt__tick--date', formatDateTick(at));
+    tick.style.top = `${h * HOUR_PX}px`;
+    axis.appendChild(tick);
+  }
+  return axis;
+}
+
 function renderAxis(schedule) {
   const { event, phases } = schedule;
   const axis = el('div', 'gantt__axis');
@@ -111,6 +181,10 @@ async function renderGantt() {
     heads.push(el('div', 'gantt__head', lane.label));
     cols.push(renderLane(lane, blocks, workshops));
   }
+
+  heads.push(el('div', 'gantt__head gantt__head--dates', 'Date & time'));
+  cols.push(renderDateAxis(schedule));
+
   host.replaceChildren(...heads, ...cols);
 }
 

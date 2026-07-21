@@ -1,0 +1,39 @@
+{
+  "intro": "Layout Sketch 1 is a 96 hour event: 72 hour build + 24 hour FRC competition, open to high schoolers building a real robot under a hard deadline. Sponsorship funds the machines, materials, and workshops that make it possible — and puts your name in front of a room full of students who are about to become engineers.",
+  "why": [
+    "Reach motivated high schoolers building real engineering skills under a hard deadline",
+    "Support STEM access for students without an existing robotics team",
+    "Build a recruiting pipeline with students who've already shipped a robot under pressure",
+    "Get visible, sustained credit in a tight-knit FRC / FTC / V5RC community"
+  ],
+  "stats": [
+    { "label": "Duration", "value": "96 hours" },
+    { "label": "Teams", "value": "32" },
+    { "label": "Stations", "value": "8" },
+    { "label": "Participants", "value": "130" }
+  ],
+  "tiers": [
+    { "id": "silver", "label": "Silver", "price": 500 },
+    { "id": "gold", "label": "Gold", "price": 1000 },
+    { "id": "platinum", "label": "Platinum", "price": 2000 },
+    { "id": "diamond", "label": "Diamond", "price": 3500 }
+  ],
+  "benefits": [
+    { "benefit": "Logo on event website", "silver": "true", "gold": "true", "platinum": "true", "diamond": "true" },
+    { "benefit": "Shout-out on event social media", "silver": "true", "gold": "true", "platinum": "true", "diamond": "true" },
+    { "benefit": "Sponsor swag in participant welcome bags", "silver": "false", "gold": "true", "platinum": "true", "diamond": "true" },
+    { "benefit": "Logo on venue signage", "silver": "true", "gold": "true", "platinum": "true", "diamond": "true" },
+    { "benefit": "Logo on participant t-shirts", "silver": "true", "gold": "true", "platinum": "true", "diamond": "true" },
+    { "benefit": "Opening ceremony", "silver": "false", "gold": "mention", "platinum": "keynote", "diamond": "keynote" },
+    { "benefit": "VIP seating at awards ceremony", "silver": "false", "gold": "false", "platinum": "true", "diamond": "true" },
+    { "benefit": "On-site table or booth", "silver": "false", "gold": "false", "platinum": "false", "diamond": "true" },
+    { "benefit": "Access to participant resume book", "silver": "false", "gold": "false", "platinum": "false", "diamond": "true" },
+    { "benefit": "Invitation to judge or mentor", "silver": "false", "gold": "false", "platinum": "false", "diamond": "true" }
+  ],
+  "contact": {
+    "name": "Alex Li",
+    "email": "sponsors@layoutsketch.dev",
+    "deadline": "December 1, 2026",
+    "note": "Want a custom package, or to sponsor with equipment or materials instead of cash? Reach out — we're flexible."
+  }
+}

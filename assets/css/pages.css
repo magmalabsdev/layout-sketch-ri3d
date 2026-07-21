@@ -176,7 +176,7 @@
 
 .gantt {
   display: grid;
-  grid-template-columns: 104px repeat(3, minmax(0, 1fr));
+  grid-template-columns: 104px repeat(3, minmax(0, 1fr)) 150px;
   gap: 28px;
   position: relative;
 }
@@ -218,6 +218,19 @@
   writing-mode: vertical-rl;
 }
 .gantt__phase--alt { background: var(--sk-fluid); color: var(--sk-bg); border-color: var(--sk-fluid); }
+
+/* Right axis: real wall-clock date/time, in contrast to the left axis's
+   elapsed-hour ticks. A slim warning-coloured rule marks each late-night
+   window (12am–6am); tick text is padded clear of it so the rule reads as a
+   flag rather than colliding with the label. */
+.gantt__tick--date { padding-left: 16px; }
+.gantt__night {
+  position: absolute;
+  left: 0;
+  width: 6px;
+  border-radius: 3px;
+  background: var(--sk-warn);
+}
 
 /* A short phase has little band to run its label along. Tighter type buys
    the room back; the ellipsis below is the last resort for a label no
@@ -518,9 +531,115 @@ a.gantt__block:hover { background: var(--sk-fluid); color: var(--sk-bg); }
 .component-card__notes { font-size: var(--sk-fs-sm); opacity: 0.7; }
 .is-empty { opacity: 0.6; font-size: var(--sk-fs-sm); }
 
+/* ===============================================================
+   Sponsorship prospectus
+   =============================================================== */
+
+/* Stat tiles reused outside the hero, where there's no top border to hang
+   off of. */
+.hero__meta--flush { margin-top: 0; padding-top: 0; border-top: none; }
+
+.why-list { display: grid; gap: 18px; max-width: 66ch; }
+.why-list li { padding-left: 26px; position: relative; }
+.why-list li::before { content: "\2713"; position: absolute; left: 0; color: var(--sk-fluid); }
+
+.benefit-table-wrap {
+  /* A 5-column comparison table doesn't reflow onto a phone screen the way
+     prose does — it scrolls in its own box rather than forcing the page
+     wider than the viewport. `overflow-x: auto` alone isn't sufficient: a
+     table's intrinsic min-width can still leak past it and inflate
+     documentElement.scrollWidth, scrolling the whole page horizontally
+     even though the wrapper itself measures as properly contained.
+     `contain: paint` forces a real containing block regardless. */
+  overflow-x: auto;
+  contain: paint;
+}
+.benefit-table {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.benefit-table th, .benefit-table td {
+  border: var(--sk-stroke) solid var(--sk-ink);
+  padding: 14px 16px;
+}
+.benefit-table__corner { border: none; }
+.benefit-table th:first-child, .benefit-table td:first-child { width: 34%; text-align: left; }
+
+.tier-head {
+  background: var(--sk-fill);
+  text-align: center;
+  vertical-align: top;
+}
+.tier-head__name {
+  display: block;
+  font-size: var(--sk-fs-sm);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.tier-head__price {
+  display: block;
+  margin-top: 6px;
+  font-size: var(--sk-fs-lg);
+  font-weight: 700;
+  color: var(--sk-fluid);
+}
+
+.benefit-table__label { font-weight: 600; text-align: left; }
+.benefit-table tbody tr:nth-child(even) { background: var(--sk-fill); }
+.benefit-table td:not(:first-child) { text-align: center; }
+
+/* Checkbox grid: an empty square is "not included," a filled square with a
+   check is "included" — drawn with a pseudo-element so the markup only has
+   to say which state applies, not which glyph represents it. */
+.benefit-table__check {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: var(--sk-stroke) solid var(--sk-ink);
+  border-radius: 4px;
+  position: relative;
+  vertical-align: middle;
+}
+.benefit-table__check.is-included { background: var(--sk-ink); }
+.benefit-table__check.is-included::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 42%;
+  width: 5px;
+  height: 9px;
+  border: solid var(--sk-bg);
+  border-width: 0 2px 2px 0;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+/* A benefit that differs by degree rather than presence — "mention" vs.
+   "keynote" — reads as a small tag, not a checkbox, so it's never mistaken
+   for a plain yes/no. */
+.benefit-table__value {
+  display: inline-block;
+  padding: 4px 10px;
+  border: 1px solid var(--sk-fluid);
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: capitalize;
+  letter-spacing: 0.04em;
+  color: var(--sk-fluid);
+}
+
+.sponsor-contact { display: grid; gap: 32px; max-width: 66ch; }
+
 @media (max-width: 760px) {
+  /* The date/time column is supplementary at this width — the block labels
+     already carry hour spans. Dropping its track (not just hiding its
+     content) keeps it from reserving a blank 150px column. */
   .gantt { grid-template-columns: 72px repeat(3, minmax(0, 1fr)); gap: 12px; }
   .gantt__phase { left: 34px; }
+  .gantt__axis--dates, .gantt__head--dates { display: none; }
   .team-grid { gap: 32px; }
   .hero__actions { gap: 24px; }
 }

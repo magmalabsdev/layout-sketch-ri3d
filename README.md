@@ -1,6 +1,6 @@
 # Layout Sketch 1
 
-Site for **Layout Sketch 1**, a 120-hour Ri3D + FRC competition hackathon.
+Site for **Layout Sketch 1**, a 96 hour event: 72 hour build + 24 hour FRC competition.
 
 Pure HTML/CSS/JS — no framework, no build step. Content that changes lives in
 `data/*.json` and is rendered client-side.

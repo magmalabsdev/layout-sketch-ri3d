@@ -1,21 +1,65 @@
 {
   "workshops": [
     {
-      "id": "cad-for-competition",
-      "title": "CAD for competition",
-      "host": "Placeholder Host",
+      "id": "onshape",
+      "title": "Intro to Onshape",
+      "host": "Host TBD",
+      "startHour": 2,
+      "endHour": 3,
+      "room": "TBD",
+      "level": "Intro",
+      "description": "Designing your first functional part in Onshape",
+      "prereqs": ["Laptop", "Onshape account"]
+    },    
+    {
+      "id": "dfm",
+      "title": "Design for Manufacturing and Assembly",
+      "host": "Host TBD",
+      "startHour": 3,
+      "endHour": 4,
+      "room": "TBD",
+      "level": "Intermediate",
+      "description": "Designing parts to optimize for the fabrication and assembly process",
+      "prereqs": ["Laptop", "Onshape account"]
+    },
+    {
+      "id": "echo",
+      "title": "Controlling Your Echo",
+      "host": "Host TBD",
+      "startHour": 5,
+      "endHour": 6,
+      "room": "TBD",
+      "level": "Intro",
+      "description": "Driving your kitbot using the Echo microcontroller for the first time",
+      "prereqs": ["Arduino IDE", "Kitbot"]
+    },
+    {
+      "id": "auto",
+      "title": "Autonomous Strategy",
+      "host": "TBD",
       "startHour": 4,
       "endHour": 8,
       "room": "Design Bay",
+      "level": "Advanced",
+      "description": "Strategizing and programming an advanced autonomous routine",
+      "prereqs": ["Arduino IDE"]
+    
+    },{
+      "id": "media",
+      "title": "Documenting your Journey",
+      "host": "TBD",
+      "startHour": 69,
+      "endHour": 70,
+      "room": "Design Bay",
       "level": "Intro",
-      "description": "Laying out a competition drivetrain from a blank sketch: constraints, part reuse, and keeping an assembly manufacturable under a 120-hour clock.",
-      "prereqs": ["A laptop with Onshape or Fusion access"],
-      "materials": ["Starter assembly file", "Drivetrain reference drawings"]
+      "description": "Strategizing and programming an advanced autonomous routine",
+      "prereqs": ["DaVinci Resolve"]
+    
     },
     {
       "id": "control-system-wiring",
       "title": "Control system wiring",
-      "host": "Placeholder Host",
+      "host": "TBD",
       "startHour": 30,
       "endHour": 33,
       "room": "Electrical Bench",
