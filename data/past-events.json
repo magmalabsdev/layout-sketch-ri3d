@@ -1,0 +1,43 @@
+{
+  "featured": [
+    {
+      "id": "ri3d-private-2026",
+      "title": "Layout Sketch Zero",
+      "year": "2026",
+      "format": "Private",
+      "teams": 1,
+      "summary": "A closed Robot in 3 Days run with a single team, used to prove out the build schedule, tooling list, and workshop format that Layout Sketch 1 is based on.",
+      "outcomes": [
+        "Full competition robot completed inside 72 hours",
+        "Tooling and components list validated against real build demand",
+        "Workshop timing tested against the build schedule"
+      ]
+    }
+  ],
+  "organized": [
+    {
+      "id": "cfsj",
+      "title": "Campfire San Jose",
+      "year": "2026",
+      "organizer": "Alex Li",
+      "role": "Lead organizer",
+      "summary": "A 2-day beginner friendly game jam with 40 participants"
+    },
+        {
+      "id": "ddsv",
+      "title": "Daydream Silicon Valley",
+      "year": "2026",
+      "organizer": "Alex Li",
+      "role": "Organizer, Mentor",
+      "summary": "A large beginner friendly game jam in the Bay Area"
+    },
+    {
+      "id": "melonjam",
+      "title": "MelonJam",
+      "year": "2025",
+      "organizer": "Alex Li",
+      "role": "Lead organizer",
+      "summary": "A bi-annual online game jam open to all. We've run this three times so far."
+    }
+  ]
+}

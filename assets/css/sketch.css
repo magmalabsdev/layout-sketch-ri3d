@@ -1,0 +1,152 @@
+/* ---------------------------------------------------------------
+   Sketch surfaces — the CAD look shared by buttons, cards, images
+   --------------------------------------------------------------- */
+
+.sk {
+  background: var(--sk-fill);
+  border: var(--sk-stroke) solid var(--sk-ink);
+  border-radius: var(--sk-radius);
+}
+
+/* Elements whose geometry tracks the viewport are drawn in undefined blue,
+   matching the colour of their dimension lines. */
+.sk--fluid { border-color: var(--sk-fluid); }
+
+.sk--hollow { background: transparent; }
+.sk--lg { border-radius: var(--sk-radius-lg); }
+
+/* Buttons. Note: no transform-based hover states anywhere on annotated
+   elements — getBoundingClientRect is post-transform, so a scale() hover
+   would make the dimension labels jump. */
+.sk-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 56px;
+  padding: 0 32px;
+  background: var(--sk-fill);
+  border: var(--sk-stroke) solid var(--sk-ink);
+  border-radius: var(--sk-radius);
+  font-weight: 700;
+  font-size: var(--sk-fs-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 120ms linear, color 120ms linear;
+}
+.sk-btn:hover { background: var(--sk-ink); color: var(--sk-bg); }
+.sk-btn--primary { background: var(--sk-ink); color: var(--sk-bg); }
+.sk-btn--primary:hover { background: var(--sk-fill); color: var(--sk-ink); }
+.sk-btn--fluid { border-color: var(--sk-fluid); }
+.sk-btn--fluid:hover { background: var(--sk-fluid); color: var(--sk-bg); }
+
+/* The #736CFF page frame from the logo. Also the `page` target for
+   data-dim-from, which is the semantically correct "screen wall" here. */
+.sk-frame {
+  position: fixed;
+  inset: 0;
+  border: var(--sk-frame) solid var(--sk-fluid);
+  pointer-events: none;
+  z-index: 9500;
+}
+
+.sk-tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+.sk-tag--fluid { color: var(--sk-fluid); }
+.sk-tag--warn { color: var(--sk-warn); }
+
+/* Failure state for a JSON section that could not load. */
+.sk-message {
+  padding: 28px 32px;
+  border: var(--sk-stroke) dashed var(--sk-warn);
+  border-radius: var(--sk-radius);
+  color: var(--sk-warn);
+}
+.sk-message h3 { font-size: var(--sk-fs); margin-bottom: 6px; }
+.sk-message p { font-size: var(--sk-fs-sm); color: var(--sk-ink); }
+
+/* ---------------------------------------------------------------
+   Annotation overlay
+   --------------------------------------------------------------- */
+
+[data-sketch-layer] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 9000;
+}
+[data-sketch-layer="fixed"] {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9001;
+}
+
+.sk-ext,
+.sk-dimline {
+  stroke: var(--sk-ink);
+  stroke-width: 1.25;
+  fill: none;
+  shape-rendering: crispEdges;
+}
+.sk-leader {
+  stroke: var(--sk-ink);
+  stroke-width: 1.25;
+  fill: none;
+  shape-rendering: geometricPrecision;
+}
+.sk-arrow {
+  fill: var(--sk-ink);
+  stroke: none;
+  shape-rendering: geometricPrecision;
+}
+.sk-dot {
+  fill: var(--sk-ink);
+  stroke: none;
+}
+.sk-outline {
+  fill: none;
+  stroke: var(--sk-ink);
+  stroke-width: var(--sk-stroke);
+}
+
+.sk-label {
+  font-family: var(--sk-font);
+  font-size: var(--sk-fs-sm);
+  fill: var(--sk-ink);
+  /* Paints a background-coloured halo *behind* the glyphs so numbers stay
+     readable wherever they cross extension lines. */
+  paint-order: stroke;
+  stroke: var(--sk-bg);
+  stroke-width: 4px;
+  stroke-linejoin: round;
+  user-select: none;
+}
+
+/* Fluid variants — every primitive gets one. */
+.sk-g--fluid .sk-ext,
+.sk-g--fluid .sk-dimline,
+.sk-g--fluid .sk-leader,
+.sk-g--fluid .sk-outline { stroke: var(--sk-fluid); }
+.sk-g--fluid .sk-arrow,
+.sk-g--fluid .sk-dot { fill: var(--sk-fluid); }
+.sk-g--fluid .sk-label { fill: var(--sk-fluid); }
+
+/* Global kill switch, used by the smallest responsive tier and by print. */
+.sk-off [data-sketch-layer] { display: none; }
+
+@media print {
+  [data-sketch-layer], .sk-frame { display: none !important; }
+}

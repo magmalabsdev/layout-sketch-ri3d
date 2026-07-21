@@ -1,0 +1,33 @@
+{
+  "event": {
+    "start": "2027-01-09T09:00:00",
+    "durationHours": 96,
+    "tickEvery": 3
+  },
+  "phases": [
+    { "id": "design", "label": "Arrive", "startHour": 0, "endHour": 1 },
+    { "id": "build", "label": "Kickoff", "startHour": 1, "endHour": 2 },
+    { "id": "iterate", "label": "Learn", "startHour": 2, "endHour": 4 },
+    { "id": "compete", "label": "Build", "startHour": 4, "endHour": 73 },
+    { "id": "compete", "label": "Practice", "startHour": 73, "endHour": 83 },
+    { "id": "compete", "label": "Competition", "startHour": 83, "endHour": 95 },
+    { "id": "compete", "label": "Awards", "startHour": 95, "endHour": 96 }
+  ],
+  "lanes": [
+    { "id": "build", "label": "Main Event" },
+    { "id": "workshops", "label": "Workshops" },
+    { "id": "social", "label": "Social" }
+  ],
+  "blocks": [
+    { "id": "kickoff", "lane": "build", "title": "Kickoff & strategy", "startHour": 0, "endHour": 6 },
+    { "id": "cad-sprint", "lane": "build", "title": "CAD sprint", "startHour": 6, "endHour": 24 },
+    { "id": "fabrication", "lane": "build", "title": "Fabrication", "startHour": 24, "endHour": 84 },
+
+
+    { "id": "ws-cad", "lane": "workshops", "title": "CAD for competition", "startHour": 4, "endHour": 8, "workshopId": "cad-for-competition" },
+    { "id": "ws-wiring", "lane": "workshops", "title": "Control system wiring", "startHour": 30, "endHour": 33, "workshopId": "control-system-wiring" },
+
+    { "id": "opening", "lane": "social", "title": "Opening dinner", "startHour": 9, "endHour": 12 }
+
+  ]
+}

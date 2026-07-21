@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Components — Layout Sketch 1</title>
+<meta name="description" content="Every machine, tool, and component participants can use during Layout Sketch 1.">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/sketch.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+<div class="sk-frame"></div>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="wrap">
+  <header class="site-nav">
+    <a class="site-nav__brand" href="index.html" data-site-name>Layout Sketch 1</a>
+    <nav class="site-nav__links" data-nav aria-label="Primary"></nav>
+  </header>
+</div>
+
+<main id="main">
+  <section class="page-head wrap">
+    <h1 class="t-xl">Components</h1>
+    <p>
+      Everything available on site during the event, grouped by who it belongs
+      to and what kind of thing it is.
+    </p>
+    <ul class="upgrade-legend" data-upgrade-legend></ul>
+  </section>
+
+  <section class="wrap">
+    <div class="filters" id="filters">
+      <div class="filters__row" data-filter-row="scope">
+        <span class="filters__label">Scope</span>
+      </div>
+      <div class="filters__row" data-filter-row="type">
+        <span class="filters__label">Type</span>
+      </div>
+    </div>
+
+    <div id="components"></div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <div>
+      <p class="t-lg" data-site-name>Layout Sketch 1</p>
+      <p class="t-sm t-dim">&copy; <span data-year></span> &middot; A 120-hour Ri3D + FRC hackathon</p>
+    </div>
+    <ul class="site-footer__links" data-socials></ul>
+  </div>
+</footer>
+
+<script type="module">
+  import { render } from './assets/js/pages/components.js';
+  import Sketch from './assets/js/sketch/index.js';
+  await render();
+  Sketch.init();
+</script>
+</body>
+</html>

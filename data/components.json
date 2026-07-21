@@ -1,0 +1,69 @@
+{
+  "scopes": [
+    { "id": "event", "label": "Event tools", "note": "Shared across the whole event" },
+    { "id": "per-station", "label": "Per-station tools", "note": "Shared by one station — a cluster of about 4 teams with tables grouped together" },
+    { "id": "per-team", "label": "Per-team tools", "note": "Each team receives one" }
+  ],
+  "types": [
+    { "id": "machines", "label": "Machines" },
+    { "id": "hand-tools", "label": "Hand tools" },
+    { "id": "electrical", "label": "Electrical components" },
+    { "id": "mechanical", "label": "Mechanical components" },
+    { "id": "raw-materials", "label": "Raw materials" },
+    { "id": "software", "label": "Software" },
+    { "id": "upgrades", "label": "Upgrades" }
+  ],
+  "components": [
+    { "id": "bambu-a1m", "name": "Bambu Lab A1 Mini", "scope": "event", "type": "machines", "qty": 6, "upgrade": "none", "notes": "Basic 3D printer for PLA and PETG" },
+    { "id": "bambu-x2d", "name": "Bambu Lab X2D", "scope": "event", "type": "machines", "qty": 2, "upgrade": "mechanical", "notes": "High end 3D printer for composite nylon parts and flexible TPU" },
+
+    { "id": "bandsaw", "name": "8\" Bandsaw", "scope": "event", "type": "machines", "qty": 1, "upgrade": "mechanical", "notes": "For cutting tubes and plates" },
+    { "id": "drill-press", "name": "Mini Drill Press", "scope": "event", "type": "machines", "qty": 1, "upgrade": "mechanical", "notes": "For drilling holes into plates" },
+    { "id": "sander", "name": "Mini Sander", "scope": "event", "type": "machines", "qty": 1, "upgrade": "mechanical", "notes": "Roundin' corners" },
+    
+
+    { "id": "calipers", "name": "Calipers", "scope": "per-station", "type": "hand-tools", "qty": 1, "upgrade": "none", "notes": "For all kinds of measurements" },
+    { "id": "screwdriver", "name": "Screwdriver Kit", "scope": "per-station", "type": "hand-tools", "qty": 2, "upgrade": "none", "notes": "Turn those screws" },
+    { "id": "flush-cutters", "name": "Flush Cutters", "scope": "per-station", "type": "hand-tools", "qty": 2, "upgrade": "none", "notes": "Cut wires and CAD screw-ups" },
+    { "id": "station-bench-vise", "name": "Bench vise", "scope": "per-station", "type": "hand-tools", "qty": 2, "upgrade": "none", "notes": "Mounted at the station's shared workbench" },
+    { "id": "soldering-iron", "name": "Soldering Iron", "scope": "per-station", "type": "hand-tools", "qty": 1, "upgrade": "electrical", "notes": "Connect dem wires!! Electrical upgrade members receive private soldering irons." },
+    { "id": "multimeter", "name": "Multimeter", "scope": "per-station", "type": "hand-tools", "qty": 1, "upgrade": "electrical", "notes": "Debug dem circuits!! Electrical upgrade members receive private multimeters." },
+
+    { "id": "kitbot", "name": "Kitbot", "scope": "per-team", "type": "machines", "qty": 1, "upgrade": "none", "notes": "Prebuilt with bumpers, a custom power distribution PCB, an Echo microcontroller, and mecanum drive. " },
+    { "id": "echo", "name": "3DBuffalo Echo", "scope": "per-team", "type": "electrical", "qty": 1, "upgrade": "electrical", "notes": "Main microcontroller for the robot. Includes six motor drivers, 10 servo ports, and 16 GPIO ports" },
+    { "id": "pdh", "name": "Power distribution PCB", "scope": "per-team", "type": "electrical", "qty": 1, "upgrade": "electrical", "notes": "TBD" },
+    { "id": "battery", "name": "Battery", "scope": "per-team", "type": "electrical", "qty": 2, "upgrade": "electrical", "notes": "TBD" },
+    
+    { "id": "gpio-expander", "name": "GPIO expander", "scope": "per-team", "type": "electrical", "qty": 1, "upgrade": "electrical", "notes": "For electrical upgrade teams only" },
+
+    { "id": "station-charging-hub", "name": "Battery charging hub", "scope": "per-station", "type": "electrical", "qty": 1, "upgrade": "electrical", "notes": "Shared charging for the station's teams" },
+
+    { "id": "belt-kit", "name": "Timing Belt + Pulley Kit", "scope": "per-station", "type": "mechanical", "qty": 1, "upgrade": "mechanical", "notes": "GT2 6mm wide" },
+    { "id": "m2-screws", "name": "M2 Screws", "scope": "per-station", "type": "raw-materials", "qty": 1, "upgrade": "none", "notes": "Will include nuts, bolts, and heat inserts. Sizes and counts TBD" },
+    { "id": "m2.5-screws", "name": "M2.5 Screws", "scope": "per-station", "type": "raw-materials", "qty": 1, "upgrade": "none", "notes": "Will include nuts, bolts, and heat inserts. Sizes and counts TBD" },
+    { "id": "m3-screws", "name": "M3 Screws", "scope": "per-team", "type": "raw-materials", "qty": 1, "upgrade": "none", "notes": "Will include nuts, bolts, and heat inserts. Sizes and counts TBD" },
+    { "id": "m4-screws", "name": "M4 Screws", "scope": "per-team", "type": "raw-materials", "qty": 1, "upgrade": "none", "notes": "Will include nuts, bolts, and heat inserts. Sizes and counts TBD" },
+    { "id": "m5-screws", "name": "M5 Screws", "scope": "per-station", "type": "raw-materials", "qty": 1, "upgrade": "none", "notes": "Will include nuts, bolts, and heat inserts. Sizes and counts TBD" },
+    { "id": "m6-screws", "name": "M6 Screws", "scope": "per-station", "type": "raw-materials", "qty": 1, "upgrade": "none", "notes": "Will include nuts, bolts, and heat inserts. Sizes and counts TBD" },
+
+    { "id": "stock-aluminium", "name": "Aluminium stock", "scope": "event", "type": "raw-materials", "qty": 1, "upgrade": "mechanical", "notes": "Tube, angle, and sheet — drawn as needed" },
+    
+
+
+    
+    
+    
+    { "id": "pla", "name": "PLA", "scope": "per-team", "type": "raw-materials", "qty": 1, "upgrade": "none", "notes": "Enough for most basic prints" },
+    { "id": "petg", "name": "PETG", "scope": "per-station", "type": "raw-materials", "qty": 1, "upgrade": "none", "notes": "For those parts where PLA won't cut it" },
+    { "id": "tpu", "name": "TPU", "scope": "event", "type": "raw-materials", "qty": 3, "upgrade": "mechanical", "notes": "For compliant mechanisms and everything flex. Only accessible to mechanical upgrade participants." },
+    { "id": "cfn", "name": "Carbon Fiber Nylon", "scope": "event", "type": "raw-materials", "qty": 3, "upgrade": "mechanical", "notes": "For parts where strength is everything. Only accessible to mechanical upgrade participants." },
+
+
+    { "id": "onshape", "name": "Onshape", "scope": "per-team", "type": "software", "qty": 1, "upgrade": "software", "notes": "Education licence provided" },
+    { "id": "wpilib", "name": "WPILib", "scope": "per-team", "type": "software", "qty": 1, "upgrade": "software", "notes": "Preinstalled on loaner laptops" },
+
+    { "id": "upgrade-mechanical", "name": "Mechanical resource upgrade", "scope": "per-team", "type": "upgrades", "qty": 1, "upgrade": "none", "notes": "Extra machine time and stock access for teams with strong fabrication skill sets" },
+    { "id": "upgrade-electrical", "name": "Electrical resource upgrade", "scope": "per-team", "type": "upgrades", "qty": 1, "upgrade": "none", "notes": "Expanded wiring, sensor, and power component access for teams with strong electrical skill sets" },
+    { "id": "upgrade-software", "name": "Software resource upgrade", "scope": "per-team", "type": "upgrades", "qty": 1, "upgrade": "none", "notes": "Additional licensed tooling and compute access for teams with strong software skill sets" }
+  ]
+}

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Schedule &amp; workshops — Layout Sketch 1</title>
+<meta name="description" content="The 120-hour Layout Sketch 1 schedule, plus the workshop programme running alongside the build.">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/sketch.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+<div class="sk-frame"></div>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="wrap">
+  <header class="site-nav">
+    <a class="site-nav__brand" href="index.html" data-site-name>Layout Sketch 1</a>
+    <nav class="site-nav__links" data-nav aria-label="Primary"></nav>
+  </header>
+</div>
+
+<main id="main">
+  <section class="page-head wrap">
+    <h1 class="t-xl">Schedule</h1>
+    <p>
+      120 continuous hours, read top to bottom. The left axis marks the event
+      phase; the three lanes run in parallel.
+    </p>
+  </section>
+
+  <section class="wrap">
+    <div class="gantt" id="gantt"
+         data-dim data-dim-mode="fluid" data-dim-size="w"
+         data-dim-radius="none" data-dim-dots="none"
+         data-dim-priority="4" data-dim-vw="1024+"></div>
+  </section>
+
+  <section class="section wrap" id="workshops">
+    <div class="section__head">
+      <h2>Workshops</h2>
+      <p>Each workshop runs inside the schedule above. Open one for room, level, and what to bring.</p>
+    </div>
+    <div class="workshop-list" id="workshop-list" data-dim-repeat="first"></div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <div>
+      <p class="t-lg" data-site-name>Layout Sketch 1</p>
+      <p class="t-sm t-dim">&copy; <span data-year></span> &middot; A 120-hour Ri3D + FRC hackathon</p>
+    </div>
+    <ul class="site-footer__links" data-socials></ul>
+  </div>
+</footer>
+
+<script type="module">
+  import { render } from './assets/js/pages/schedule.js';
+  import Sketch from './assets/js/sketch/index.js';
+  await render();
+  Sketch.init();
+</script>
+</body>
+</html>

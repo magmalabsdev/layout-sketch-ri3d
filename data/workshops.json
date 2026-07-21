@@ -1,0 +1,28 @@
+{
+  "workshops": [
+    {
+      "id": "cad-for-competition",
+      "title": "CAD for competition",
+      "host": "Placeholder Host",
+      "startHour": 4,
+      "endHour": 8,
+      "room": "Design Bay",
+      "level": "Intro",
+      "description": "Laying out a competition drivetrain from a blank sketch: constraints, part reuse, and keeping an assembly manufacturable under a 120-hour clock.",
+      "prereqs": ["A laptop with Onshape or Fusion access"],
+      "materials": ["Starter assembly file", "Drivetrain reference drawings"]
+    },
+    {
+      "id": "control-system-wiring",
+      "title": "Control system wiring",
+      "host": "Placeholder Host",
+      "startHour": 30,
+      "endHour": 33,
+      "room": "Electrical Bench",
+      "level": "Intermediate",
+      "description": "Wiring a legal control system end to end — power distribution, CAN topology, and the inspection checks that most commonly fail on the first pass.",
+      "prereqs": ["Basic soldering", "Familiarity with the FRC control system"],
+      "materials": ["Practice wiring board", "Crimp kit"]
+    }
+  ]
+}

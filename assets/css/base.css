@@ -1,0 +1,85 @@
+@font-face {
+  font-family: "Space Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/space-mono-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Space Mono";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/space-mono-700.woff2") format("woff2");
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  /* Reserve the scrollbar: without this, a scrollbar appearing mid-session
+     reflows the page and every measured dimension changes at once. */
+  scrollbar-gutter: stable;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--sk-bg);
+  color: var(--sk-ink);
+  font-family: var(--sk-font);
+  font-size: var(--sk-fs);
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, p, figure, ul, ol, dl, dd { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; }
+button { font: inherit; color: inherit; }
+
+:where(a, button, summary, input, [tabindex]):focus-visible {
+  outline: var(--sk-stroke) solid var(--sk-fluid);
+  outline-offset: 3px;
+}
+
+/* Type scale */
+.t-xl { font-size: var(--sk-fs-xl); font-weight: 700; line-height: 0.92; letter-spacing: -0.03em; }
+.t-lg { font-size: var(--sk-fs-lg); font-weight: 700; letter-spacing: -0.01em; }
+.t-sm { font-size: var(--sk-fs-sm); }
+.t-mono-caps {
+  font-size: var(--sk-fs-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+.t-dim { opacity: 0.6; }
+
+/* Layout */
+.wrap {
+  width: min(100% - (var(--sk-gutter) * 2), var(--sk-measure));
+  margin-inline: auto;
+}
+.section { padding-block: clamp(64px, 10vw, 140px); }
+.stack > * + * { margin-top: var(--sk-gap); }
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+}
+.skip-link:focus {
+  left: var(--sk-gutter);
+  top: var(--sk-gutter);
+  z-index: 10000;
+  padding: 12px 20px;
+  background: var(--sk-bg);
+  border: var(--sk-stroke) solid var(--sk-ink);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}

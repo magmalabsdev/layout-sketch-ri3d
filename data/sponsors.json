@@ -1,0 +1,7 @@
+{
+  "sponsors": [
+    { "id": "placeholder-one", "name": "Sponsor One", "tier": "title", "url": "https://example.com" },
+    { "id": "placeholder-two", "name": "Sponsor Two", "tier": "gold", "url": "https://example.com" },
+    { "id": "placeholder-three", "name": "Sponsor Three", "tier": "gold", "url": "https://example.com" }
+  ]
+}

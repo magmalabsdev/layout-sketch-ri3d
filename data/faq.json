@@ -1,0 +1,20 @@
+{
+  "faq": [
+    {
+      "q": "What is Layout Sketch?",
+      "a": "A 72 hour Ri3D (Robot in 3 Days) build session followed by a 24 hour FRC style robotics competition."
+    },
+    {
+      "q": "Who can register?",
+      "a": "Although experience on a robotics (FRC, FTC, or V5RC) team is highly reccommended, all high school students are welcome to participate"
+    },
+    {
+      "q": "What does it cost?",
+      "a": "Thanks to our sponsors, Layout Sketch is entirely free to attend."
+    },
+    {
+      "q": "Do I need to bring my own tools?",
+      "a": "No, we will have tools for you. The full inventory available on-site is listed on the Components page."
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Past events — Layout Sketch 1</title>
+<meta name="description" content="The private Ri3D event behind Layout Sketch 1, and other events organized by members of the team.">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/sketch.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+<div class="sk-frame"></div>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="wrap">
+  <header class="site-nav">
+    <a class="site-nav__brand" href="index.html" data-site-name>Layout Sketch 1</a>
+    <nav class="site-nav__links" data-nav aria-label="Primary"></nav>
+  </header>
+</div>
+
+<main id="main">
+  <section class="page-head wrap">
+    <h1 class="t-xl">Past events</h1>
+    <p>What Layout Sketch 1 is built on.</p>
+  </section>
+
+  <section class="wrap" id="featured"></section>
+
+  <section class="section wrap" id="organized-section">
+    <div class="section__head">
+      <h2>Also organized by the team</h2>
+      <p>Other events members of the organizing team have run.</p>
+    </div>
+    <div class="event-list" id="organized" data-dim-repeat="first"></div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <div>
+      <p class="t-lg" data-site-name>Layout Sketch 1</p>
+      <p class="t-sm t-dim">&copy; <span data-year></span> &middot; A 120-hour Ri3D + FRC hackathon</p>
+    </div>
+    <ul class="site-footer__links" data-socials></ul>
+  </div>
+</footer>
+
+<script type="module">
+  import { render } from './assets/js/pages/past-events.js';
+  import Sketch from './assets/js/sketch/index.js';
+  await render();
+  Sketch.init();
+</script>
+</body>
+</html>
